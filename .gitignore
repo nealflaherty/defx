@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+
+# Audio data (large files — download separately)
+data/dry/*.wav
+data/wet/*.wav
+
+# Model checkpoints (large — download separately)
+models/defx/checkpoints/
+
+# macOS
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
