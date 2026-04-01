@@ -15,10 +15,21 @@ The model uses:
 
 ## Quick Start
 
+### Setup
+
+```bash
+source setup.sh
+```
+
+This creates a `.venv` virtual environment and installs all dependencies. To reactivate later:
+
+```bash
+source .venv/bin/activate
+```
+
 ### Inference
 
 ```bash
-pip install -r requirements.txt
 python inference.py --input my_distorted_guitar.wav --output clean_guitar.wav
 ```
 
@@ -92,7 +103,9 @@ These can be used with any NAM-compatible plugin or with the included `effects/n
 
 ```
 defx/
+├── setup.sh                  # Create venv and install dependencies
 ├── inference.py              # Run effect removal on audio files
+├── train.ipynb               # Local training notebook
 ├── models/
 │   ├── defx/                 # DeFX model architecture
 │   │   ├── demucs_defx.py    # HDemucs backbone + mixing head
