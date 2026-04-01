@@ -26,7 +26,7 @@ from nam.models.linear import Linear
 from nam.models.recurrent import LSTM
 from nam.models.wavenet import WaveNet
 
-BUCKET = os.environ.get("DEFX_S3_BUCKET", "YOUR-BUCKET-NAME")
+BUCKET = os.environ.get("DEFX_S3_BUCKET", "defx-629711664886")
 S3_PREFIX = "ground_truth"
 
 _BUILDERS = {

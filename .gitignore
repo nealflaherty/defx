@@ -4,14 +4,15 @@ __pycache__/
 *.pyo
 .venv/
 
-# Audio data (large files — download separately)
-data/dry/*.wav
-data/wet/*.wav
-
 # Model checkpoints (large — download separately)
 models/defx/checkpoints/
 
-# macOS
+# Downloaded datasets
+IDMT-SMT-GUITAR_V2/
+IDMT-SMT-GUITAR_V2.zip
+
+# Secrets
+.env
 .DS_Store
 
 # IDE
