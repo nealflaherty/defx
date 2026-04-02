@@ -56,7 +56,7 @@ def main():
     parser = argparse.ArgumentParser(description="DeFX: remove effects from guitar audio")
     parser.add_argument("--input", type=str, required=True, help="Wet/effected audio file")
     parser.add_argument("--output", type=str, default=None, help="Output path")
-    parser.add_argument("--checkpoint", type=str, default="models/defx/checkpoints/best.pt")
+    parser.add_argument("--checkpoint", type=str, default="models/defx/checkpoints/demucs_defx_best.pt")
     parser.add_argument("--device", type=str, default="auto")
     args = parser.parse_args()
 
