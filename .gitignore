@@ -7,6 +7,15 @@ __pycache__/
 # Model checkpoints (large — download separately)
 models/defx/checkpoints/
 
+# NAM training artifacts
+models/nam/*/training/
+
+# Capture outputs
+captures/
+
+# NAM input signal
+nam_input.wav
+
 # Downloaded datasets
 IDMT-SMT-GUITAR_V2/
 IDMT-SMT-GUITAR_V2.zip

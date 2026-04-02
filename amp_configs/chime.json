@@ -1,0 +1,26 @@
+{
+  "name": "chime",
+  "description": "Chime amp (British Class A) — clean chime to driven",
+  "plugin": "/Library/Audio/Plug-Ins/VST3/uaudio_ruby_amp.vst3",
+  "fixed_params": {
+    "vib_trem_enable": false,
+    "boost_enable": false,
+    "room": 0,
+    "output": 5.0,
+    "power": true,
+    "master_bypass": false,
+    "channel": "Brill"
+  },
+  "settings": [
+    { "volume": 2.0, "treble": 5.0, "cut": 5.0, "bass": 5.0 },
+    { "volume": 3.0, "treble": 8.0, "cut": 3.0, "bass": 3.0 },
+    { "volume": 4.5, "treble": 3.0, "cut": 7.0, "bass": 7.0 },
+    { "volume": 5.0, "treble": 5.0, "cut": 5.0, "bass": 5.0 },
+    { "volume": 5.5, "treble": 8.0, "cut": 3.0, "bass": 5.0 },
+    { "volume": 7.0, "treble": 3.0, "cut": 5.0, "bass": 5.0 },
+    { "volume": 7.0, "treble": 5.0, "cut": 5.0, "bass": 5.0 },
+    { "volume": 7.0, "treble": 8.0, "cut": 3.0, "bass": 3.0 },
+    { "volume": 9.0, "treble": 5.0, "cut": 5.0, "bass": 5.0 },
+    { "volume": 10.0, "treble": 5.0, "cut": 5.0, "bass": 7.0 }
+  ]
+}

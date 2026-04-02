@@ -1,0 +1,88 @@
+{
+  "name": "plexi",
+  "description": "Plexi amp (British high gain) — clean to saturated lead",
+  "plugin": "/Library/Audio/Plug-Ins/VST3/uaudio_lion_amp.vst3",
+  "fixed_params": {
+    "boost_enable": false,
+    "gate_enable": false,
+    "ghost_notes_mod": false,
+    "room": 0,
+    "output": 5.0,
+    "power": true,
+    "master_bypass": false,
+    "model": "Lead",
+    "input_routing": "High"
+  },
+  "settings": [
+    {
+      "volume_1": 2.0,
+      "treble": 5.0,
+      "middle": 5.0,
+      "bass": 5.0,
+      "presence": 5.0
+    },
+    {
+      "volume_1": 3.0,
+      "treble": 7.0,
+      "middle": 3.0,
+      "bass": 5.0,
+      "presence": 7.0
+    },
+    {
+      "volume_1": 4.5,
+      "treble": 4.0,
+      "middle": 7.0,
+      "bass": 7.0,
+      "presence": 4.0
+    },
+    {
+      "volume_1": 5.0,
+      "treble": 5.0,
+      "middle": 5.0,
+      "bass": 5.0,
+      "presence": 5.0
+    },
+    {
+      "volume_1": 6.0,
+      "treble": 7.0,
+      "middle": 5.0,
+      "bass": 5.0,
+      "presence": 7.0
+    },
+    {
+      "volume_1": 7.0,
+      "treble": 5.0,
+      "middle": 7.0,
+      "bass": 5.0,
+      "presence": 5.0
+    },
+    {
+      "volume_1": 7.0,
+      "treble": 7.0,
+      "middle": 5.0,
+      "bass": 3.0,
+      "presence": 7.0
+    },
+    {
+      "volume_1": 8.0,
+      "treble": 5.0,
+      "middle": 5.0,
+      "bass": 5.0,
+      "presence": 5.0
+    },
+    {
+      "volume_1": 9.0,
+      "treble": 6.0,
+      "middle": 7.0,
+      "bass": 5.0,
+      "presence": 6.0
+    },
+    {
+      "volume_1": 10.0,
+      "treble": 5.0,
+      "middle": 5.0,
+      "bass": 7.0,
+      "presence": 5.0
+    }
+  ]
+}

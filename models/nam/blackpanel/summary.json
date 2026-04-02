@@ -1,0 +1,52 @@
+[
+  {
+    "tag": "blackpanel_v2.0_t5.0_b5.0",
+    "params": { "volume": 2.0, "treble": 5.0, "bass": 5.0 },
+    "nam_file": "blackpanel_v2.0_t5.0_b5.0.nam"
+  },
+  {
+    "tag": "blackpanel_v3.0_t8.0_b3.0",
+    "params": { "volume": 3.0, "treble": 8.0, "bass": 3.0 },
+    "nam_file": "blackpanel_v3.0_t8.0_b3.0.nam"
+  },
+  {
+    "tag": "blackpanel_v4.5_t3.0_b7.0",
+    "params": { "volume": 4.5, "treble": 3.0, "bass": 7.0 },
+    "nam_file": "blackpanel_v4.5_t3.0_b7.0.nam"
+  },
+  {
+    "tag": "blackpanel_v5.0_t5.0_b5.0",
+    "params": { "volume": 5.0, "treble": 5.0, "bass": 5.0 },
+    "nam_file": "blackpanel_v5.0_t5.0_b5.0.nam"
+  },
+  {
+    "tag": "blackpanel_v5.5_t8.0_b5.0",
+    "params": { "volume": 5.5, "treble": 8.0, "bass": 5.0 },
+    "nam_file": "blackpanel_v5.5_t8.0_b5.0.nam"
+  },
+  {
+    "tag": "blackpanel_v7.0_t3.0_b5.0",
+    "params": { "volume": 7.0, "treble": 3.0, "bass": 5.0 },
+    "nam_file": "blackpanel_v7.0_t3.0_b5.0.nam"
+  },
+  {
+    "tag": "blackpanel_v7.0_t5.0_b5.0",
+    "params": { "volume": 7.0, "treble": 5.0, "bass": 5.0 },
+    "nam_file": "blackpanel_v7.0_t5.0_b5.0.nam"
+  },
+  {
+    "tag": "blackpanel_v7.0_t8.0_b3.0",
+    "params": { "volume": 7.0, "treble": 8.0, "bass": 3.0 },
+    "nam_file": "blackpanel_v7.0_t8.0_b3.0.nam"
+  },
+  {
+    "tag": "blackpanel_v9.0_t5.0_b5.0",
+    "params": { "volume": 9.0, "treble": 5.0, "bass": 5.0 },
+    "nam_file": "blackpanel_v9.0_t5.0_b5.0.nam"
+  },
+  {
+    "tag": "blackpanel_v10.0_t5.0_b7.0",
+    "params": { "volume": 10.0, "treble": 5.0, "bass": 7.0 },
+    "nam_file": "blackpanel_v10.0_t5.0_b7.0.nam"
+  }
+]

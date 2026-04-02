@@ -1,0 +1,26 @@
+{
+  "name": "blackpanel",
+  "description": "Black panel American tube amp — clean to full drive sweep",
+  "plugin": "/Library/Audio/Plug-Ins/VST3/uaudio_dream_amp.vst3",
+  "fixed_params": {
+    "reverb_enable": false,
+    "vibrato_enable": false,
+    "boost_enable": false,
+    "bright": false,
+    "output": 5.0,
+    "power": true,
+    "master_bypass": false
+  },
+  "settings": [
+    { "volume": 2.0, "treble": 5.0, "bass": 5.0 },
+    { "volume": 3.0, "treble": 8.0, "bass": 3.0 },
+    { "volume": 4.5, "treble": 3.0, "bass": 7.0 },
+    { "volume": 5.0, "treble": 5.0, "bass": 5.0 },
+    { "volume": 5.5, "treble": 8.0, "bass": 5.0 },
+    { "volume": 7.0, "treble": 3.0, "bass": 5.0 },
+    { "volume": 7.0, "treble": 5.0, "bass": 5.0 },
+    { "volume": 7.0, "treble": 8.0, "bass": 3.0 },
+    { "volume": 9.0, "treble": 5.0, "bass": 5.0 },
+    { "volume": 10.0, "treble": 5.0, "bass": 7.0 }
+  ]
+}
