@@ -82,6 +82,7 @@ def train(
     unfreeze_encoder_layers: int = 0,
     save_every: int = 5,
     max_steps_per_epoch: int = 0,
+    patience: int = 0,
 ):
     if torch.cuda.is_available():
         device = "cuda"
@@ -140,6 +141,7 @@ def train(
     checkpoint_dir.mkdir(parents=True, exist_ok=True)
 
     best_loss = float("inf")
+    epochs_without_improvement = 0
 
     for epoch in range(1, epochs + 1):
         model.train()
@@ -227,15 +229,23 @@ def train(
         # Save best to both model_dir and checkpoint_dir
         if avg < best_loss:
             best_loss = avg
+            epochs_without_improvement = 0
             torch.save(ckpt, model_dir / "demucs_defx_best.pt")
             torch.save(ckpt, checkpoint_dir / "demucs_defx_best.pt")
             print(f"    ✓ saved best (loss={best_loss:.4f})")
+        else:
+            epochs_without_improvement += 1
 
         # Save periodic checkpoints (synced to S3 by SageMaker)
         if epoch % save_every == 0 or epoch == epochs:
             ckpt_path = checkpoint_dir / f"demucs_defx_epoch_{epoch:03d}.pt"
             torch.save(ckpt, ckpt_path)
             print(f"    ✓ checkpoint: {ckpt_path.name}")
+
+        # Early stopping
+        if patience > 0 and epochs_without_improvement >= patience:
+            print(f"    ✗ early stopping: no improvement for {patience} epochs")
+            break
 
     # Save final to model_dir
     torch.save(ckpt, model_dir / "demucs_defx_final.pt")
@@ -266,6 +276,9 @@ def main():
     parser.add_argument("--max-steps-per-epoch", type=int,
                         default=int(os.environ.get("SM_HP_MAX_STEPS_PER_EPOCH", "0")),
                         help="Limit steps per epoch (0=unlimited)")
+    parser.add_argument("--patience", type=int,
+                        default=int(os.environ.get("SM_HP_PATIENCE", "0")),
+                        help="Early stopping patience in epochs (0=disabled)")
     args = parser.parse_args()
 
     print("=== DeFX Training (HDemucs backbone, stereo) ===")
@@ -298,6 +311,7 @@ def main():
         unfreeze_encoder_layers=args.unfreeze_encoder_layers,
         save_every=args.save_every,
         max_steps_per_epoch=args.max_steps_per_epoch,
+        patience=args.patience,
     )
 
 

@@ -38,7 +38,7 @@ from nam.models.wavenet import WaveNet
 
 BUCKET = os.environ.get("DEFX_S3_BUCKET", "YOUR-BUCKET-NAME")
 S3_PREFIX = "ground_truth"
-CHAINS_PER_FILE = 7       # ~8K chain pairs from ~1173 files
+CHAINS_PER_FILE = 14      # ~16K chain pairs from ~1173 files
 NAM_PAIRS_PER_FILE = 7    # ~8K NAM-only pairs (randomly sampled from available models)
 SEED = 42
 

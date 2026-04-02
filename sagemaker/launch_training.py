@@ -48,6 +48,7 @@ def main():
     parser.add_argument("--unfreeze-encoder-layers", type=int, default=3)
     parser.add_argument("--save-every", type=int, default=25)
     parser.add_argument("--max-steps-per-epoch", type=int, default=200)
+    parser.add_argument("--patience", type=int, default=50)
     args = parser.parse_args()
 
     boto_session = boto3.Session(profile_name=AWS_PROFILE, region_name=REGION)
@@ -96,6 +97,7 @@ def main():
             "unfreeze-encoder-layers": args.unfreeze_encoder_layers,
             "save-every": args.save_every,
             "max-steps-per-epoch": args.max_steps_per_epoch,
+            "patience": args.patience,
         },
         stopping_condition=stopping,
         checkpoint_config=CheckpointConfig(s3_uri=s3_checkpoints),
