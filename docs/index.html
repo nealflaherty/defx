@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DeFX — Audio Examples</title>
+    <style>
+      :root {
+        --bg: #fafafa;
+        --fg: #333;
+        --muted: #777;
+        --border: #ddd;
+        --accent: #4c72b0;
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: Georgia, "Times New Roman", serif;
+        color: var(--fg);
+        background: var(--bg);
+        max-width: 860px;
+        margin: 0 auto;
+        padding: 2rem 1.5rem;
+        line-height: 1.6;
+      }
+      h1 {
+        font-size: 1.8rem;
+        margin-bottom: 0.3rem;
+      }
+      .subtitle {
+        color: var(--muted);
+        font-size: 1rem;
+        margin-bottom: 2rem;
+      }
+      h2 {
+        font-size: 1.2rem;
+        margin: 2.5rem 0 0.5rem;
+        border-bottom: 1px solid var(--border);
+        padding-bottom: 0.3rem;
+      }
+      p {
+        margin-bottom: 1rem;
+      }
+      a {
+        color: var(--accent);
+      }
+      .example {
+        background: white;
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        padding: 1.2rem;
+        margin-bottom: 1.5rem;
+      }
+      .example h3 {
+        font-size: 1rem;
+        margin-bottom: 0.8rem;
+      }
+      .audio-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 1rem;
+        margin-top: 0.5rem;
+      }
+      .audio-cell label {
+        display: block;
+        font-size: 0.85rem;
+        color: var(--muted);
+        margin-bottom: 0.3rem;
+      }
+      audio {
+        width: 100%;
+      }
+      .description {
+        font-size: 0.9rem;
+        color: var(--muted);
+        font-style: italic;
+        margin-bottom: 0.8rem;
+      }
+      @media (max-width: 600px) {
+        .audio-row {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>DeFX: Guitar Effect Removal</h1>
+    <p class="subtitle">Audio examples — companion page for the DeFX paper</p>
+
+    <p>
+      DeFX removes distortion, reverb, delay, and other effects from guitar
+      recordings using a fine-tuned
+      <a href="https://github.com/facebookresearch/demucs">Hybrid Demucs</a>
+      backbone. Listen to the examples below to compare the wet (effected)
+      input, the DeFX restored output, and the dry (clean) ground truth.
+    </p>
+    <p>Use headphones for the best comparison. All audio is 44.1 kHz mono.</p>
+
+    <h2>Examples</h2>
+  </body>
+</html>
+
+<div class="example">
+  <h3>Amp Distortion Only</h3>
+  <p class="description">Blackpanel tube amp at moderate gain — the core use case for DeFX.</p>
+  <div class="audio-row">
+    <div class="audio-cell">
+      <label>Wet (input)</label>
+      <audio controls preload="none" src="../examples/test_wet.wav"></audio>
+    </div>
+    <div class="audio-cell">
+      <label>DeFX (restored)</label>
+      <audio controls preload="none" src="../examples/test_restored.wav"></audio>
+    </div>
+    <div class="audio-cell">
+      <label>Dry (ground truth)</label>
+      <audio controls preload="none" src="../examples/test_dry.wav"></audio>
+    </div>
+  </div>
+</div>
+
+<div class="example">
+  <h3>Amp + Room Reverb</h3>
+  <p class="description">Amp distortion with a medium room reverb. DeFX reduces both the distortion and the reverb tail.</p>
+  <div class="audio-row">
+    <div class="audio-cell">
+      <label>Wet (input)</label>
+      <audio controls preload="none" src="../examples/test_wet_amp_reverb.wav"></audio>
+    </div>
+    <div class="audio-cell">
+      <label>DeFX (restored)</label>
+      <audio controls preload="none" src="../examples/test_restored_amp_reverb.wav"></audio>
+    </div>
+    <div class="audio-cell">
+      <label>Dry (ground truth)</label>
+      <audio controls preload="none" src="../examples/test_dry.wav"></audio>
+    </div>
+  </div>
+</div>
+
+<div class="example">
+  <h3>Amp + Delay + Reverb</h3>
+  <p class="description">A more complex chain with slapback delay and hall reverb on top of amp distortion.</p>
+  <div class="audio-row">
+    <div class="audio-cell">
+      <label>Wet (input)</label>
+      <audio controls preload="none" src="../examples/test_wet_amp_delay_reverb.wav"></audio>
+    </div>
+    <div class="audio-cell">
+      <label>DeFX (restored)</label>
+      <audio controls preload="none" src="../examples/test_restored_amp_delay_reverb.wav"></audio>
+    </div>
+    <div class="audio-cell">
+      <label>Dry (ground truth)</label>
+      <audio controls preload="none" src="../examples/test_dry.wav"></audio>
+    </div>
+  </div>
+</div>
+
+<div class="example">
+  <h3>Chorus + Reverb (No Amp)</h3>
+  <p class="description">Clean guitar with chorus modulation and reverb — chorus is particularly challenging because its pitch fluctuations are difficult to distinguish from the natural pitch variations of a guitar.</p>
+  <div class="audio-row">
+    <div class="audio-cell">
+      <label>Wet (input)</label>
+      <audio controls preload="none" src="../examples/test_wet_chorus_reverb.wav"></audio>
+    </div>
+    <div class="audio-cell">
+      <label>DeFX (restored)</label>
+      <audio controls preload="none" src="../examples/test_restored_chorus_reverb.wav"></audio>
+    </div>
+    <div class="audio-cell">
+      <label>Dry (ground truth)</label>
+      <audio controls preload="none" src="../examples/test_dry.wav"></audio>
+    </div>
+  </div>
+</div>
+
+<h2>Metrics</h2>
+
+<p>
+  Evaluated on 500 held-out validation pairs (10% split by dry file hash, no overlap with training data).
+  All metrics compare the restored output against the dry ground truth.
+</p>
+
+<table style="width:100%; border-collapse:collapse; margin:1rem 0; font-size:0.9rem;">
+  <thead>
+    <tr style="border-bottom:2px solid var(--border); text-align:left;">
+      <th style="padding:0.5rem;">Metric</th>
+      <th style="padding:0.5rem; text-align:right;">Wet (input)</th>
+      <th style="padding:0.5rem; text-align:right;">Restored</th>
+      <th style="padding:0.5rem; text-align:right;">Δ</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr style="border-bottom:1px solid var(--border);">
+      <td style="padding:0.5rem;">SI-SDR (dB) ↑</td>
+      <td style="padding:0.5rem; text-align:right;">−0.90</td>
+      <td style="padding:0.5rem; text-align:right;">3.95</td>
+      <td style="padding:0.5rem; text-align:right; color:#2a7a2a;">+4.85</td>
+    </tr>
+    <tr style="border-bottom:1px solid var(--border);">
+      <td style="padding:0.5rem;">L1 ↓</td>
+      <td style="padding:0.5rem; text-align:right;">0.0298</td>
+      <td style="padding:0.5rem; text-align:right;">0.0177</td>
+      <td style="padding:0.5rem; text-align:right; color:#2a7a2a;">−0.012</td>
+    </tr>
+    <tr style="border-bottom:1px solid var(--border);">
+      <td style="padding:0.5rem;">MRSTFT ↓</td>
+      <td style="padding:0.5rem; text-align:right;">1.934</td>
+      <td style="padding:0.5rem; text-align:right;">1.051</td>
+      <td style="padding:0.5rem; text-align:right; color:#2a7a2a;">−0.883</td>
+    </tr>
+    <tr style="border-bottom:1px solid var(--border);">
+      <td style="padding:0.5rem;">MCD (dB) ↓</td>
+      <td style="padding:0.5rem; text-align:right;">95.1</td>
+      <td style="padding:0.5rem; text-align:right;">36.2</td>
+      <td style="padding:0.5rem; text-align:right; color:#2a7a2a;">−58.9</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 style="font-size:1rem; margin:1.5rem 0 0.5rem;">SI-SDR Improvement by Effect Type</h3>
+<p class="description">How well DeFX removes different effect chains. Higher is better.</p>
+<table style="width:100%; border-collapse:collapse; margin:1rem 0; font-size:0.9rem;">
+  <thead>
+    <tr style="border-bottom:2px solid var(--border); text-align:left;">
+      <th style="padding:0.4rem;">Effect Chain</th>
+      <th style="padding:0.4rem; text-align:right;">SI-SDR Δ (dB)</th>
+      <th style="padding:0.4rem; text-align:right;">n</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.4rem;">Comp + Amp + Delay + Reverb</td><td style="padding:0.4rem; text-align:right;">+10.56</td><td style="padding:0.4rem; text-align:right;">25</td></tr>
+    <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.4rem;">Amp + Slapback + Room</td><td style="padding:0.4rem; text-align:right;">+10.40</td><td style="padding:0.4rem; text-align:right;">19</td></tr>
+    <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.4rem;">Amp Only</td><td style="padding:0.4rem; text-align:right;">+9.49</td><td style="padding:0.4rem; text-align:right;">6</td></tr>
+    <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.4rem;">NAM Only</td><td style="padding:0.4rem; text-align:right;">+8.04</td><td style="padding:0.4rem; text-align:right;">133</td></tr>
+    <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.4rem;">Amp + Reverb</td><td style="padding:0.4rem; text-align:right;">+8.00</td><td style="padding:0.4rem; text-align:right;">56</td></tr>
+    <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.4rem;">Comp + Amp + Reverb</td><td style="padding:0.4rem; text-align:right;">+7.49</td><td style="padding:0.4rem; text-align:right;">29</td></tr>
+    <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.4rem;">Amp + Delay + Reverb</td><td style="padding:0.4rem; text-align:right;">+6.85</td><td style="padding:0.4rem; text-align:right;">35</td></tr>
+    <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.4rem;">Amp + Chorus + Reverb</td><td style="padding:0.4rem; text-align:right;">+6.30</td><td style="padding:0.4rem; text-align:right;">24</td></tr>
+    <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.4rem;">Chorus + Reverb</td><td style="padding:0.4rem; text-align:right;">+1.56</td><td style="padding:0.4rem; text-align:right;">11</td></tr>
+    <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.4rem;">Delay Only</td><td style="padding:0.4rem; text-align:right;">+1.12</td><td style="padding:0.4rem; text-align:right;">26</td></tr>
+    <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.4rem;">Reverb Only</td><td style="padding:0.4rem; text-align:right;">−0.54</td><td style="padding:0.4rem; text-align:right;">49</td></tr>
+  </tbody>
+</table>
+<p style="font-size:0.85rem; color:var(--muted);">
+  Passthrough pairs (clean input = clean output) achieve 89 dB absolute SI-SDR, indicating negligible artifacts on unprocessed signals.
+</p>
+
+<h2>About</h2>
+<p>
+  DeFX uses a pretrained HDemucs source separation model with selectively unfrozen encoder/decoder layers
+  and a learned mixing head. Training data is generated synthetically using
+  <a href="https://github.com/sdatkinson/neural-amp-modeler">Neural Amp Modeler</a> captures
+  and <a href="https://github.com/spotify/pedalboard">Spotify Pedalboard</a> effects.
+</p>
+<p>
+  <a href="https://github.com/nealflaherty/defx">GitHub Repository</a>
+</p>
+
+</body>
+</html>
