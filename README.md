@@ -2,6 +2,8 @@
 
 DeFX removes distortion and amp effects from guitar recordings, recovering the clean (dry) signal using a fine-tuned [HDemucs](https://github.com/facebookresearch/demucs) backbone.
 
+[Listen to audio examples](https://nealflaherty.github.io/defx/) · [Read the paper (PDF)](docs/defx_paper.pdf)
+
 ## How It Works
 
 DeFX takes a pretrained HDemucs music source separation model and fine-tunes it to learn the inverse of guitar amp distortion. Given a recording of a distorted guitar, it predicts what the clean guitar sounded like before the amp.
@@ -21,10 +23,21 @@ The model uses:
 
 ## Quick Start
 
+### Setup
+
+```bash
+source setup.sh
+```
+
+This creates a `.venv` virtual environment and installs all dependencies. To reactivate later:
+
+```bash
+source .venv/bin/activate
+```
+
 ### Inference
 
 ```bash
-pip install -r requirements.txt
 python inference.py --input my_distorted_guitar.wav --output clean_guitar.wav
 ```
 
@@ -131,6 +144,7 @@ Aggressive midrange, saturated lead tones, classic rock character.
 
 ```
 defx/
+├── setup.sh                  # Create venv and install dependencies
 ├── inference.py              # Run effect removal on audio files
 ├── capture_amp.py            # Capture and train NAM models from VST3 plugins
 ├── train.ipynb               # Interactive training pipeline notebook
@@ -144,15 +158,24 @@ defx/
 │   │   ├── dataset.py        # Dry/wet pair dataset (lazy-loading)
 │   │   └── network.py        # STFT U-Net (alternative architecture)
 │   └── nam/                  # NAM amp captures (.nam files)
-│       └── blackpanel/       # Pre-trained black panel captures
+│       ├── blackpanel/       # American tube amp captures
+│       ├── chime/            # British Class A captures
+│       └── plexi/            # British high gain captures
 ├── effects/
 │   ├── chain.py              # Effect chain for serial processing
 │   └── nam_loader.py         # NAM model loader for batch inference
 ├── sagemaker/
 │   ├── train_demucs_defx.py  # SageMaker training entry point
+│   ├── evaluate.py           # Compute metrics and generate figures
+│   ├── run_evaluation.py     # SageMaker eval entry point
 │   ├── generate_ground_truth.py  # Ground truth generation
 │   ├── launch_training.py    # Launch training jobs
+│   ├── launch_evaluation.py  # Launch evaluation jobs
 │   └── launch_ground_truth.py    # Launch ground truth jobs
+├── docs/
+│   ├── index.html            # Companion page with audio examples
+│   ├── defx_paper.tex        # LaTeX paper
+│   └── figures/              # Evaluation figures and architecture diagram
 ├── examples/
 │   ├── test_wet.wav          # Example distorted guitar
 │   └── test_dry.wav          # Example clean reference
@@ -167,7 +190,7 @@ The training uses AWS SageMaker with a PyTorch Deep Learning Container. Key sett
 - **Architecture**: HDemucs with 3 encoder + 3 decoder layers unfrozen
 - **Loss**: L1 (primary) + 0.1 × Multi-Resolution STFT + 0.05 × Mel STFT
 - **Optimizer**: AdamW with cosine annealing LR schedule
-- **Data**: ~12,000 dry/wet pairs from IDMT-SMT-GUITAR_V2 dataset × 10 NAM settings
+- **Data**: ~25,000 dry/wet pairs from IDMT-SMT-GUITAR_V2 dataset × 30 NAM captures (3 amp types × 10 settings) + randomized effect chains
 
 Training data is the [IDMT-SMT-GUITAR_V2](https://zenodo.org/records/7544110) dataset, which contains isolated guitar recordings across multiple instruments, playing styles, and genres.
 

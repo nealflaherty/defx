@@ -88,3 +88,66 @@ BREAKING CHANGE: The /auth endpoint now requires a different payload structure.
 Old: { username, password }
 New: { email, password }
 ```
+
+## Gitmoji
+
+Prefix commit subjects with a gitmoji to visually categorize changes. Use the most relevant emoji from this table:
+
+| Emoji | Code                      | Use when                    |
+| ----- | ------------------------- | --------------------------- |
+| ✨    | `:sparkles:`              | New feature                 |
+| 🐛    | `:bug:`                   | Bug fix                     |
+| 📝    | `:memo:`                  | Documentation               |
+| 🎨    | `:art:`                   | Code structure / formatting |
+| ⚡️    | `:zap:`                   | Performance improvement     |
+| 🔥    | `:fire:`                  | Removing code or files      |
+| 🚑️    | `:ambulance:`             | Critical hotfix             |
+| ♻️    | `:recycle:`               | Refactor                    |
+| ✅    | `:white_check_mark:`      | Tests                       |
+| 🔒️    | `:lock:`                  | Security fix                |
+| 🚀    | `:rocket:`                | Deploy                      |
+| 💥    | `:boom:`                  | Breaking change             |
+| ➕    | `:heavy_plus_sign:`       | Add dependency              |
+| ➖    | `:heavy_minus_sign:`      | Remove dependency           |
+| ⬆️    | `:arrow_up:`              | Upgrade dependency          |
+| ⬇️    | `:arrow_down:`            | Downgrade dependency        |
+| 🔧    | `:wrench:`                | Configuration               |
+| 🔨    | `:hammer:`                | Dev scripts                 |
+| 👷    | `:construction_worker:`   | CI build system             |
+| 💚    | `:green_heart:`           | Fix CI                      |
+| 🚧    | `:construction:`          | Work in progress            |
+| 📦️    | `:package:`               | Compiled files / packages   |
+| 🚚    | `:truck:`                 | Move / rename files         |
+| 📄    | `:page_facing_up:`        | License                     |
+| 🙈    | `:see_no_evil:`           | Gitignore                   |
+| 🏗️    | `:building_construction:` | Architectural change        |
+| 🧱    | `:bricks:`                | Infrastructure              |
+| ⚗️    | `:alembic:`               | Experiment                  |
+| 🩹    | `:adhesive_bandage:`      | Simple non-critical fix     |
+| ⚰️    | `:coffin:`                | Remove dead code            |
+| 💡    | `:bulb:`                  | Source code comments        |
+| ✏️    | `:pencil2:`               | Fix typo                    |
+| ⏪️    | `:rewind:`                | Revert changes              |
+| 🔖    | `:bookmark:`              | Release / version tag       |
+
+### Format
+
+The emoji goes after the type/scope prefix:
+
+```
+<type>(<scope>): <emoji> <subject>
+```
+
+### Examples
+
+```
+feat(model): ✨ add early stopping with patience parameter
+```
+
+```
+fix(eval): 🐛 handle passthrough SI-SDR as absolute metric
+```
+
+```
+docs: 📖 update README with setup instructions
+```
