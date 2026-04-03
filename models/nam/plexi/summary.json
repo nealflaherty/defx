@@ -1,0 +1,112 @@
+[
+  {
+    "tag": "plexi_bass5p0_middle5p0_presence5p0_treble5p0_volume_12p0",
+    "params": {
+      "volume_1": 2.0,
+      "treble": 5.0,
+      "middle": 5.0,
+      "bass": 5.0,
+      "presence": 5.0
+    },
+    "nam_file": "models/nam/plexi/plexi_bass5p0_middle5p0_presence5p0_treble5p0_volume_12p0.nam"
+  },
+  {
+    "tag": "plexi_bass5p0_middle3p0_presence7p0_treble7p0_volume_13p0",
+    "params": {
+      "volume_1": 3.0,
+      "treble": 7.0,
+      "middle": 3.0,
+      "bass": 5.0,
+      "presence": 7.0
+    },
+    "nam_file": "models/nam/plexi/plexi_bass5p0_middle3p0_presence7p0_treble7p0_volume_13p0.nam"
+  },
+  {
+    "tag": "plexi_bass7p0_middle7p0_presence4p0_treble4p0_volume_14p5",
+    "params": {
+      "volume_1": 4.5,
+      "treble": 4.0,
+      "middle": 7.0,
+      "bass": 7.0,
+      "presence": 4.0
+    },
+    "nam_file": "models/nam/plexi/plexi_bass7p0_middle7p0_presence4p0_treble4p0_volume_14p5.nam"
+  },
+  {
+    "tag": "plexi_bass5p0_middle5p0_presence5p0_treble5p0_volume_15p0",
+    "params": {
+      "volume_1": 5.0,
+      "treble": 5.0,
+      "middle": 5.0,
+      "bass": 5.0,
+      "presence": 5.0
+    },
+    "nam_file": "models/nam/plexi/plexi_bass5p0_middle5p0_presence5p0_treble5p0_volume_15p0.nam"
+  },
+  {
+    "tag": "plexi_bass5p0_middle5p0_presence7p0_treble7p0_volume_16p0",
+    "params": {
+      "volume_1": 6.0,
+      "treble": 7.0,
+      "middle": 5.0,
+      "bass": 5.0,
+      "presence": 7.0
+    },
+    "nam_file": "models/nam/plexi/plexi_bass5p0_middle5p0_presence7p0_treble7p0_volume_16p0.nam"
+  },
+  {
+    "tag": "plexi_bass5p0_middle7p0_presence5p0_treble5p0_volume_17p0",
+    "params": {
+      "volume_1": 7.0,
+      "treble": 5.0,
+      "middle": 7.0,
+      "bass": 5.0,
+      "presence": 5.0
+    },
+    "nam_file": "models/nam/plexi/plexi_bass5p0_middle7p0_presence5p0_treble5p0_volume_17p0.nam"
+  },
+  {
+    "tag": "plexi_bass3p0_middle5p0_presence7p0_treble7p0_volume_17p0",
+    "params": {
+      "volume_1": 7.0,
+      "treble": 7.0,
+      "middle": 5.0,
+      "bass": 3.0,
+      "presence": 7.0
+    },
+    "nam_file": "models/nam/plexi/plexi_bass3p0_middle5p0_presence7p0_treble7p0_volume_17p0.nam"
+  },
+  {
+    "tag": "plexi_bass5p0_middle5p0_presence5p0_treble5p0_volume_18p0",
+    "params": {
+      "volume_1": 8.0,
+      "treble": 5.0,
+      "middle": 5.0,
+      "bass": 5.0,
+      "presence": 5.0
+    },
+    "nam_file": "models/nam/plexi/plexi_bass5p0_middle5p0_presence5p0_treble5p0_volume_18p0.nam"
+  },
+  {
+    "tag": "plexi_bass5p0_middle7p0_presence6p0_treble6p0_volume_19p0",
+    "params": {
+      "volume_1": 9.0,
+      "treble": 6.0,
+      "middle": 7.0,
+      "bass": 5.0,
+      "presence": 6.0
+    },
+    "nam_file": "models/nam/plexi/plexi_bass5p0_middle7p0_presence6p0_treble6p0_volume_19p0.nam"
+  },
+  {
+    "tag": "plexi_bass7p0_middle5p0_presence5p0_treble5p0_volume_110p0",
+    "params": {
+      "volume_1": 10.0,
+      "treble": 5.0,
+      "middle": 5.0,
+      "bass": 7.0,
+      "presence": 5.0
+    },
+    "nam_file": "models/nam/plexi/plexi_bass7p0_middle5p0_presence5p0_treble5p0_volume_110p0.nam"
+  }
+]

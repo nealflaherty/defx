@@ -80,13 +80,16 @@ def list_params(plugin_path: str):
 
 
 def ensure_nam_input():
-    """Check that the NAM input signal exists."""
+    """Download the NAM input signal if it doesn't exist."""
     if NAM_INPUT.exists():
         return
-    print(f"NAM input signal not found: {NAM_INPUT}")
-    print(f"Download it from: {NAM_INPUT_URL}")
-    print(f"Save it as: {NAM_INPUT}")
-    sys.exit(1)
+    print(f"Downloading NAM input signal...")
+    import gdown
+    gdown.download(id="1KbaS4oXXNEuh2aCPLwKrPdf5KFOjda8G", output=str(NAM_INPUT), quiet=False)
+    if not NAM_INPUT.exists():
+        print(f"Download failed. Get it manually from: {NAM_INPUT_URL}")
+        sys.exit(1)
+    print(f"Saved: {NAM_INPUT}")
 
 
 def capture(plugin_path: str, params: dict, name: str, tag: str) -> Path:
