@@ -157,7 +157,7 @@ We evaluate DeFX on 500 randomly sampled pairs from the held-out validation spli
 
 \subsection{Objective Metrics}
 
-Table~\ref{tab:objective} summarizes the objective metrics across all 500 validation pairs. DeFX improves SI-SDR by +4.85\,dB on average, reduces L1 error by 41\%, and cuts mel cepstral distortion by more than half.
+Table~\ref{tab:objective} summarizes the objective metrics across all 500 validation pairs. DeFX improves SI-SDR by +6.30\,dB on average, reduces L1 error by 44\%, and cuts mel cepstral distortion by more than half.
 
 \begin{table}[t]
   \centering
@@ -167,21 +167,21 @@ Table~\ref{tab:objective} summarizes the objective metrics across all 500 valida
     \toprule
     Metric & Wet (input) & Restored & $\Delta$ \\
     \midrule
-    SI-SDR (dB) $\uparrow$ & $-0.90$ & $3.95$ & $+4.85$ \\
-    L1 $\downarrow$ & $0.0298$ & $0.0177$ & $-0.0121$ \\
-    MRSTFT $\downarrow$ & $1.934$ & $1.051$ & $-0.883$ \\
-    MCD (dB) $\downarrow$ & $95.1$ & $36.2$ & $-58.9$ \\
+    SI-SDR (dB) $\uparrow$ & $-1.60$ & $4.70$ & $+6.30$ \\
+    L1 $\downarrow$ & $0.0312$ & $0.0176$ & $-0.0136$ \\
+    MRSTFT $\downarrow$ & $1.945$ & $1.054$ & $-0.891$ \\
+    MCD (dB) $\downarrow$ & $95.1$ & $36.2$ & $-59.0$ \\
     \bottomrule
   \end{tabular}
 \end{table}
 
 \subsection{Performance by Effect Type}
 
-Figure~\ref{fig:per_effect} shows SI-SDR improvement broken down by effect chain type. The model performs best on chains involving amplifier distortion, with compressor + amp + delay + reverb achieving +10.56\,dB and amp + slapback + room reverb achieving +10.40\,dB. Pure amp distortion removal (amp only and NAM only) yields +8--9\,dB improvement.
+Figure~\ref{fig:per_effect} shows SI-SDR improvement broken down by effect chain type. The model performs best on chains involving amplifier distortion, with amp + slapback + room reverb achieving +10.99\,dB and amp + reverb achieving +10.74\,dB. Pure amp distortion removal (NAM only) yields +7.20\,dB improvement.
 
-Effects-only chains without amplifier distortion are harder to invert: chorus + reverb (+1.56\,dB), delay only (+1.12\,dB), and reverb only ($-0.54$\,dB). This is expected, as the model's training data is dominated by amp-based chains, and time-domain effects like reverb and delay are inherently more difficult to invert due to their long temporal dependencies.
+Effects-only chains without amplifier distortion are harder to invert: chorus + reverb (+1.96\,dB), delay only (+1.65\,dB), and reverb only ($-0.14$\,dB). This is expected, as the model's training data is dominated by amp-based chains, and time-domain effects like reverb and delay are inherently more difficult to invert due to their long temporal dependencies.
 
-For passthrough pairs (where the input is already clean), the model achieves an absolute SI-SDR of 89\,dB against the ground truth, indicating that it introduces negligible artifacts on unprocessed signals.
+For passthrough pairs (where the input is already clean), the model achieves an absolute SI-SDR of 11\,dB against the ground truth, indicating that it introduces minimal artifacts on unprocessed signals.
 
 \begin{figure}[htbp]
   \centering
@@ -192,7 +192,7 @@ For passthrough pairs (where the input is already clean), the model achieves an 
 
 \subsection{Performance by Distortion Level}
 
-Figure~\ref{fig:per_gain} groups results by amplifier gain level. Performance is relatively consistent across all distortion levels: clean (+8.60\,dB), breakup (+7.24\,dB), crunch (+8.22\,dB), and cranked (+7.69\,dB). The model handles heavy distortion nearly as well as light distortion, suggesting that the unfrozen encoder layers learn effective representations across the full gain range.
+Figure~\ref{fig:per_gain} groups results by amplifier gain level. Performance is relatively consistent across all distortion levels: clean (+8.85\,dB), breakup (+6.36\,dB), crunch (+8.20\,dB), and cranked (+6.97\,dB). The model handles heavy distortion nearly as well as light distortion, suggesting that the unfrozen encoder layers learn effective representations across the full gain range.
 
 \begin{figure}[htbp]
   \centering

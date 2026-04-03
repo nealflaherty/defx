@@ -250,6 +250,7 @@ def plot_bar_chart(data: dict[str, list[float]], title: str, ylabel: str,
     ax.invert_yaxis()
     plt.tight_layout()
     plt.savefig(output_path, dpi=150, bbox_inches="tight")
+    plt.savefig(output_path.replace(".pdf", ".png"), dpi=150, bbox_inches="tight")
     plt.close()
     print(f"  Saved: {output_path}")
 
@@ -282,6 +283,7 @@ def plot_spectrogram_comparison(wet_np, restored_np, dry_np, sr, title, output_p
     fig.suptitle(title, fontsize=13, y=1.02)
     plt.tight_layout()
     plt.savefig(output_path, dpi=150, bbox_inches="tight")
+    plt.savefig(output_path.replace(".pdf", ".png"), dpi=150, bbox_inches="tight")
     plt.close()
     print(f"  Saved: {output_path}")
 
